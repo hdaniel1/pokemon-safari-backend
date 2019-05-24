@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  species: MyString
+  nature: MyString
+  ability: MyString
+  type_1: MyString
+  type_2: MyString
+
+two:
+  species: MyString
+  nature: MyString
+  ability: MyString
+  type_1: MyString
+  type_2: MyString
