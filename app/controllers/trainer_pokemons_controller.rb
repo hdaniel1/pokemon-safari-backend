@@ -1,7 +1,7 @@
 class TrainerPokemonsController < ApplicationController
 
   def index
-    render json:(TrainerPokemon.all)
+    render json:TrainerPokemon.all
   end
 
   def show
@@ -9,14 +9,13 @@ class TrainerPokemonsController < ApplicationController
   end
 
   def create
-    
-
+    render json: TrainerPokemon.create(trainer_pokemon_params)
   end
 
   private
 
   def trainer_pokemon_params
-    params.require(@trainer_pokemon).permit(:trainer_id, :nickname, :pokemon_id, :id)
+    params.require(:trainer_pokemon).permit!
   end
 
 
