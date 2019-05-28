@@ -9,11 +9,13 @@ require 'open-uri'
 nosa = Trainer.find_or_create_by(name:"Nosa")
 dan = Trainer.find_or_create_by(name: "Dan")
 
-base_path = "https://pokeapi.co/api/v2/pokemon/"
+pokemon_path = "https://pokeapi.co/api/v2/pokemon/"
+nature_path = "https://pokeapi.co/api/v2/nature/"
 
+#add pokemon to db
 i = 1
 while i < 803 do
-  target = JSON.load(open("#{base_path}#{i}"))
+  target = JSON.load(open("#{pokemon_path}#{i}"))
 
   # Pokemon.create(name: target["name"], type1: target["types"][0]["type"]["name"], type2: target["types"][1]["type"]["name"], image_url: target["sprites"]["front_default"])
   # i += 1
@@ -24,4 +26,12 @@ while i < 803 do
     Pokemon.find_or_create_by(species: target["name"], type_1: target["types"][0]["type"]["name"], type_2: nil, ability: target["abilities"][0]["ability"]["name"], sprite_image: target["sprites"]["front_default"])
     i += 1
    end
+end
+
+#add natures to db
+i = 1
+while i < 24 do
+  target = JSON.load(open("#{nature_path}#{i}"))
+  Nature.find_or_create_by(name: target["name"])
+  i += 1
 end
