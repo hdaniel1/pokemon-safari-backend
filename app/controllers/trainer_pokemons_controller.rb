@@ -12,11 +12,14 @@ class TrainerPokemonsController < ApplicationController
     render json: TrainerPokemon.create(trainer_pokemon_params)
   end
 
+  def destroy
+    render json: TrainerPokemon.find(params[:id]).destroy
+  end
+
   private
 
   def trainer_pokemon_params
     params.require(:trainer_pokemon).permit!
   end
-
 
 end
