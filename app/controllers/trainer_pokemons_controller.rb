@@ -12,6 +12,11 @@ class TrainerPokemonsController < ApplicationController
     render json: TrainerPokemon.create(trainer_pokemon_params)
   end
 
+  def update
+    byebug
+    render json: TrainerPokemon.find(params[:id]).update(trainer_pokemon_params)
+  end
+
   def destroy
     render json: TrainerPokemon.find(params[:id]).destroy
   end
