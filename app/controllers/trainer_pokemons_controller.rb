@@ -13,7 +13,6 @@ class TrainerPokemonsController < ApplicationController
   end
 
   def update
-    byebug
     render json: TrainerPokemon.find(params[:id]).update(trainer_pokemon_params)
   end
 
