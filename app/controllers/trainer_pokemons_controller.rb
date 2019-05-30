@@ -13,7 +13,8 @@ class TrainerPokemonsController < ApplicationController
   end
 
   def update
-    render json: TrainerPokemon.find(params[:id]).update(trainer_pokemon_params)
+    TrainerPokemon.find(params[:id]).update(trainer_pokemon_params)
+    render json: {nickname: params[:nickname], id: params[:id]}
   end
 
   def destroy
