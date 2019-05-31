@@ -5,7 +5,18 @@ class TrainersController < ApplicationController
   end
 
   def show
+    # byebug
     render json: Trainer.find(params[:id])
+  end
+
+  def create
+    @user = params["username"]
+    @trainer = Trainer.find_by(username: @user)
+    if(@trainer)
+      redirect_to "http://localhost:3000/trainers/#{@trainer.id}"
+    else
+        render json: {:error => "Sorry, #{@user} is not a user"}
+    end
   end
 
   private
