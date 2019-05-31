@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_29_152547) do
+ActiveRecord::Schema.define(version: 2019_05_31_130713) do
 
   create_table "natures", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_152547) do
     t.datetime "updated_at", null: false
     t.string "sprite_image"
     t.integer "nature_id"
+    t.string "shiny_sprite"
   end
 
   create_table "trainer_pokemons", force: :cascade do |t|
