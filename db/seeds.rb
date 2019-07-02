@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
-nosa = Trainer.find_or_create_by(name:"Nosa")
-dan = Trainer.find_or_create_by(name: "Dan")
+nosa = Trainer.find_or_create_by(name:"Nosa", username:"Nosa")
+dan = Trainer.find_or_create_by(name: "Dan", username:"Dan")
 
 pokemon_path = "https://pokeapi.co/api/v2/pokemon/"
 nature_path = "https://pokeapi.co/api/v2/nature/"
